@@ -1,25 +1,52 @@
-document // makes it so you can press enter to submit as opposed to just being able to press a button
-    .getElementById("urlInput")
-    .addEventListener("keydown", function (event) {
+document.addEventListener("DOMContentLoaded", function () {
+    const urlInput = document.getElementById("urlInput");
+    const searchButton = document.getElementById("searchButton");
+    const modal = document.getElementById("modal");
+    const iframe = document.getElementById("iframeWindow");
+    const closeModal = document.querySelector(".close");
+    const searchUrl = "https://www.google.com/search?q=";
+
+    function openModalWithURL(url) {
+        if (!url.includes(".")) {
+            url = searchUrl + encodeURIComponent(url);
+        } else {
+            if (!url.startsWith("http://") && !url.startsWith("https://")) {
+                url = "https://" + url;
+            }
+        }
+
+        iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
+        modal.style.display = "flex";
+    }
+
+    // Search button click event
+    searchButton.onclick = function (event) {
+        event.preventDefault();
+        let url = urlInput.value.trim();
+        if (url) {
+            openModalWithURL(url);
+        }
+    };
+
+    // Enter key event
+    urlInput.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             event.preventDefault();
-            document.getElementById("searchButton").click();
+            searchButton.click();
         }
     });
 
-document.getElementById("searchButton").onclick = function (event) {
-    event.preventDefault();
+    // Close modal event
+    closeModal.addEventListener("click", function () {
+        modal.style.display = "none";
+        iframe.src = ""; // Clear iframe when closing
+    });
 
-    let url = document.getElementById("urlInput").value; // if no periods are detected in the input, search google instead
-    let searchUrl = "https://www.google.com/search?q=";
-
-    if (!url.includes(".")) {
-        url = searchUrl + encodeURIComponent(url);
-    } else {
-        if (!url.startsWith("http://") && !url.startsWith("https://")) { // if no http or https is detected, add https automatically
-            url = "https://" + url;
+    // Close modal when clicking outside of it
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+            iframe.src = "";
         }
-    }
-
-    iframeWindow.src = __uv$config.prefix + __uv$config.encodeUrl(url);
-};
+    });
+});
