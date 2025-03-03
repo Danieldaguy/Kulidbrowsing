@@ -5,13 +5,13 @@
         <script src="/uv/uv.config.js"></script>
 
         <script>
-        if ("serviceWorker" in navigator) {
-            window.addEventListener("load", () => {
-                navigator.serviceWorker.register("/uv/sw.js", {
-                    scope: __uv$config.prefix,
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", () => {
+                    navigator.serviceWorker.register("/uv/sw.js", {
+                        scope: __uv$config.prefix,
+                    });
                 });
-            });
-        }
+            }
         </script>
 
         <link rel="stylesheet" href="example.css">
@@ -20,7 +20,14 @@
         <input type="text" id="urlInput" placeholder="Enter URL here">
         <button id="searchButton">Search Text</button>
 
-        <iframe id="iframeWindow" class="iframeWindow"></iframe>
+        <!-- Modal Structure -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <iframe id="iframeWindow" class="iframeWindow"></iframe>
+            </div>
+        </div>
+
+        <script src="example.js"></script>
     </body>
-    <script src="example.js"></script>
 </html>
