@@ -7,12 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeModal = document.querySelector(".close");
     const searchUrl = "https://www.google.com/search?q=";
 
-    // Ensure the modal is hidden when the page loads
     modal.style.display = "none";
 
     function openModalWithURL(url) {
         if (!url || url.trim() === "") {
-            return; // Do nothing if the URL is empty or invalid
+            return;
         }
 
         if (!url.includes(".")) {
@@ -27,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.style.display = "flex";
     }
 
-    // Search button click event
     searchButton.onclick = function (event) {
         event.preventDefault();
         let url = urlInput.value.trim();
@@ -36,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    // Enter key event
     urlInput.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             event.preventDefault();
@@ -44,13 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Close modal event
     closeModal.addEventListener("click", function () {
         modal.style.display = "none";
         iframe.src = "";
     });
 
-    // Close modal when clicking outside of it
     window.addEventListener("click", function (event) {
         if (event.target === modal) {
             modal.style.display = "none";
@@ -58,7 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Open in new tab and redirect main tab
     openNewTabButton.onclick = function () {
         let url = urlInput.value.trim();
         if (!url) return;
