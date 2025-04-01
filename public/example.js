@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeModal = document.querySelector(".close");
     const searchUrl = "https://www.google.com/search?q=";
 
+    // Ensure modal is initially hidden
+    modal.style.display = "none";
+
     function openModalWithURL(url) {
         if (!url.includes(".")) {
             url = searchUrl + encodeURIComponent(url);
@@ -17,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
-        modal.style.display = "flex";
+        modal.style.display = "flex"; // Only show modal after valid URL input
     }
 
     // Search button click event
