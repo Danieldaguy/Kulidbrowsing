@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeModal = document.querySelector(".close");
     const searchUrl = "https://www.google.com/search?q=";
 
+    // Ensure the modal is hidden when the page loads
+    modal.style.display = "none";
+
     function openModalWithURL(url) {
         if (!url || url.trim() === "") {
             return; // Do nothing if the URL is empty or invalid
