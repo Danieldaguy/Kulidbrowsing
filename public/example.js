@@ -7,9 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeModal = document.querySelector(".close");
     const searchUrl = "https://www.google.com/search?q=";
 
-    // Ensure modal is initially hidden
-    modal.style.display = "none";
-
     function openModalWithURL(url) {
         if (!url.includes(".")) {
             url = searchUrl + encodeURIComponent(url);
@@ -20,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
-        modal.style.display = "flex"; // Only show modal after valid URL input
+        modal.style.display = "flex"; // Show modal
     }
 
     // Search button click event
@@ -42,14 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Close modal event
     closeModal.addEventListener("click", function () {
-        modal.style.display = "none";
+        modal.style.display = "none"; // Hide modal
         iframe.src = "";
     });
 
     // Close modal when clicking outside of it
     window.addEventListener("click", function (event) {
         if (event.target === modal) {
-            modal.style.display = "none";
+            modal.style.display = "none"; // Hide modal
             iframe.src = "";
         }
     });
