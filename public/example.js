@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
-        modal.style.display = "flex"; // Show modal
+        modal.style.display = "flex";
     }
 
     // Search button click event
@@ -39,14 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Close modal event
     closeModal.addEventListener("click", function () {
-        modal.style.display = "none"; // Hide modal
+        modal.style.display = "none";
         iframe.src = "";
     });
 
     // Close modal when clicking outside of it
     window.addEventListener("click", function (event) {
         if (event.target === modal) {
-            modal.style.display = "none"; // Hide modal
+            modal.style.display = "none";
             iframe.src = "";
         }
     });
