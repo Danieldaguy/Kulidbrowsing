@@ -1,8 +1,8 @@
 /* General Styling */
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #1e1e2f, #090909);
-    color: #eaeaea;
+    background: #000000; /* Black background */
+    color: #ffffff; /* White text */
     margin: 0;
     padding: 0;
     display: flex;
@@ -19,9 +19,9 @@ body {
     width: 90%;
     max-width: 600px;
     padding: 30px;
-    background: rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
     border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2); /* White shadow */
     backdrop-filter: blur(12px);
     text-align: center;
     animation: slideIn 0.8s ease-in-out;
@@ -32,7 +32,7 @@ body {
 h1 {
     margin-bottom: 20px;
     font-size: 32px;
-    color: #ffffff;
+    color: #ffffff; /* White text */
     text-transform: uppercase;
     letter-spacing: 3px;
     animation: fadeIn 1.2s ease-in-out;
@@ -58,21 +58,21 @@ h1 {
     border: none;
     border-radius: 12px;
     font-size: 16px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white */
+    color: #ffffff; /* White text */
     outline: none;
     transition: all 0.3s ease;
     text-align: center;
 }
 
 #urlInput::placeholder {
-    color: #bbbbbb;
+    color: #cccccc; /* Light gray placeholder */
     font-style: italic;
 }
 
 #urlInput:focus {
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2); /* Slightly brighter white */
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.3); /* White glow */
 }
 
 /* Buttons */
@@ -84,32 +84,33 @@ button {
     font-size: 16px;
     font-weight: bold;
     transition: all 0.3s ease;
-    color: #ffffff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    color: #000000; /* Black text */
+    background: #ffffff; /* White button */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3); /* White shadow */
 }
 
 button:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5); /* Brighter shadow */
 }
 
 #searchButton {
-    background: #4caf50;
+    background: #ffffff; /* White button */
 }
 
 #searchButton:hover {
-    background: #45a049;
-    box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+    background: #e6e6e6; /* Light gray hover */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* White glow */
 }
 
 #openNewTab {
-    background: #2196f3;
+    background: #ffffff; /* White button */
     width: 100%;
 }
 
 #openNewTab:hover {
-    background: #1e88e5;
-    box-shadow: 0 0 15px rgba(33, 150, 243, 0.5);
+    background: #e6e6e6; /* Light gray hover */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* White glow */
 }
 
 /* Modal */
@@ -120,7 +121,7 @@ button:hover {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.85); /* Black background */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -133,12 +134,12 @@ button:hover {
     width: 90%;
     max-width: 800px;
     height: 80%;
-    background: #1e1e2f;
+    background: #000000; /* Black background */
     border-radius: 16px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2); /* White shadow */
     animation: slideIn 0.5s ease-in-out;
 }
 
@@ -148,13 +149,13 @@ button:hover {
     right: 20px;
     font-size: 28px;
     font-weight: bold;
-    color: #ffffff;
+    color: #ffffff; /* White text */
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .close:hover {
-    color: #ff4d4d;
+    color: #ff4d4d; /* Red hover */
 }
 
 /* Iframe */
@@ -163,7 +164,7 @@ button:hover {
     width: 100%;
     height: 100%;
     border: none;
-    background: #000;
+    background: #000000; /* Black background */
 }
 
 /* Animations */
