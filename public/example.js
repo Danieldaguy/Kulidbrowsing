@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchUrl = "https://www.google.com/search?q=";
 
     function openModalWithURL(url) {
+        if (!url || url.trim() === "") {
+            return; // Do nothing if the URL is empty or invalid
+        }
+
         if (!url.includes(".")) {
             url = searchUrl + encodeURIComponent(url);
         } else {
